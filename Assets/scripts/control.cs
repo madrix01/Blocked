@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class control : MonoBehaviour
 {
+    public PlayerStats playerStats;
     public float speed;
     public float jump;
     public float down;
@@ -85,9 +86,7 @@ public class control : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
-
             Respawn();
-
         }
     }
 
