@@ -6,6 +6,8 @@ public class control : MonoBehaviour
 {
     public float speed;
     public float jump;
+    public float down;
+    
     private float moveinput;
 
     private Rigidbody2D rb;
@@ -61,7 +63,7 @@ public class control : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.DownArrow))
         {
-            rb.velocity = Vector2.down * jump;
+            rb.velocity = Vector2.down * down;
         }
 
 
