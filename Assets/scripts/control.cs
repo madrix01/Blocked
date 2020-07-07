@@ -7,6 +7,8 @@ public class control : MonoBehaviour
     public float speed;
     public float jump;
     public float down;
+
+    public Transform spawnpoint;
     
     private float moveinput;
 
@@ -75,5 +77,23 @@ public class control : MonoBehaviour
         Vector3 Scaler = transform.localScale;
         Scaler.x *= -1;
         transform.localScale = Scaler;
+    }
+
+
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy"))
+        {
+
+            Respawn();
+
+        }
+    }
+
+
+    public void Respawn()
+    {
+        this.transform.position = spawnpoint.position;
     }
 }
