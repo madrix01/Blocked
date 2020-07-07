@@ -59,11 +59,11 @@ public class control : MonoBehaviour
         {
             rb.velocity = Vector2.up * jump;
         }
-        /* if (isgrounded == false)
-         {
-             extrajump= 0;
-         }
-        */
+        if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            rb.velocity = Vector2.down * jump;
+        }
+
 
     }
 
