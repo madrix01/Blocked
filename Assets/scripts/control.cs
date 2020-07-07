@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class control : MonoBehaviour
@@ -21,10 +22,16 @@ public class control : MonoBehaviour
     public LayerMask whatisground;
     private int extrajump;
     public int extrajumpValue;
+    
     void Start()
     {
         extrajump = extrajumpValue;
         rb = GetComponent<Rigidbody2D>();
+
+        if (speed > 5)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()
@@ -96,4 +103,7 @@ public class control : MonoBehaviour
     {
         this.transform.position = spawnpoint.position;
     }
+
+
+   
 }
