@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour{
-    public Transform bulbPoint;
+    public Transform firePoint;
     public GameObject bulbPrefab;
 
     //public PlayerStats playerStats;
@@ -14,6 +14,6 @@ public class Weapon : MonoBehaviour{
         }
     }
     void Shoot(){
-        Instantiate(bulbPrefab, bulbPoint.position, bulbPoint.rotation);
+        Instantiate(bulbPrefab, firePoint.position, firePoint.rotation);
     }
 }

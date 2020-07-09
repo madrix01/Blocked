@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class control : MonoBehaviour
 {
-    public PlayerStats playerStats;
     public float speed;
     public float jump;
     public float down;
@@ -22,6 +21,10 @@ public class control : MonoBehaviour
     public LayerMask whatisground;
     private int extrajump;
     public int extrajumpValue;
+    public PlayerStats playerStats;
+    public GameObject TheLight;
+
+
     void Start()
     {
         extrajump = extrajumpValue;
@@ -45,7 +48,6 @@ public class control : MonoBehaviour
         {
             flip();
         }
-
     }
     void Update()
     {
@@ -75,17 +77,18 @@ public class control : MonoBehaviour
     void flip()
     {
         facingright = !facingright;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
+        // Vector3 Scaler = transform.localScale;
+        // Scaler.x *= -1;
+        // transform.localScale = Scaler;
+        transform.Rotate(0f, 180f, 0f);
     }
-
 
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("enemy"))
         {
+            waiter(1);
             Respawn();
         }
     }
@@ -94,5 +97,9 @@ public class control : MonoBehaviour
     public void Respawn()
     {
         this.transform.position = spawnpoint.position;
+    }
+
+    IEnumerator waiter(int s){
+        yield return new WaitForSeconds(s);
     }
 }
