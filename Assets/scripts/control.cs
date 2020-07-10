@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class control : MonoBehaviour
@@ -21,14 +22,23 @@ public class control : MonoBehaviour
     public LayerMask whatisground;
     private int extrajump;
     public int extrajumpValue;
+<<<<<<< HEAD
     public PlayerStats playerStats;
     public GameObject TheLight;
 
 
+=======
+    
+>>>>>>> 5930ff5f2d3649d66244ab35060183abe6ab1157
     void Start()
     {
         extrajump = extrajumpValue;
         rb = GetComponent<Rigidbody2D>();
+
+        if (speed > 5)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()
@@ -99,7 +109,12 @@ public class control : MonoBehaviour
         this.transform.position = spawnpoint.position;
     }
 
+<<<<<<< HEAD
     IEnumerator waiter(int s){
         yield return new WaitForSeconds(s);
     }
+=======
+
+   
+>>>>>>> 5930ff5f2d3649d66244ab35060183abe6ab1157
 }
